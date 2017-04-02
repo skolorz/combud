@@ -1,7 +1,7 @@
 module App.Counter where
 
 import Prelude ((+), (-), const, show)
-import Pux.Html (Html, div, span, button, text)
+import Pux.Html (Html, div, span, button, text, h2)
 import Pux.Html.Events (onClick)
 
 data Action = Increment | Decrement
@@ -19,7 +19,8 @@ view :: State -> Html Action
 view state =
   div
     []
-    [ button [ onClick (const Increment) ] [ text "Increment" ]
+    [ h2 [] [ text "Dzisiaj" ]
+    , button [ onClick (const Increment) ] [ text "Increment" ]
     , span [] [ text (show state) ]
     , button [ onClick (const Decrement) ] [ text "Decrement" ]
     ]
